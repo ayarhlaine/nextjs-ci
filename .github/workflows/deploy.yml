@@ -64,7 +64,7 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ecs-task-definition.json
-          service: nextjs-ci
+          service: nextjs-ci-service
           cluster: nextjs-ci
           wait-for-service-stability: true
     
