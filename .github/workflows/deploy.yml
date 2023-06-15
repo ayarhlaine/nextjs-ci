@@ -1,11 +1,11 @@
-name: DEPLOYTOAWS
+name: deploy-to-aws
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  testandbuild:
+  test-and-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,8 +18,8 @@ jobs:
         run: npm run test
       - name: Push Docker Image to ECR
         run: echo "pushing docker image ..."
-  deploy:
-    needs: [testandbuild]
+  deploy-to-aws:
+    needs: [test-and-build]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to AWS
