@@ -19,6 +19,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Run
 ```
 docker build -t nextjs-ci:latest .
-docker run -p 80:3000 -t nextjs-ci:latest
 ```
 
