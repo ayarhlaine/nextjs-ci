@@ -12,5 +12,16 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run test
+      - name: Install dependancies
+        run: npm install
+      - name: Run Tests
+        run: npm run test
+      - name: Push Docker Image to ECR
+        run: echo "pushing docker image ..."
+  deploy:
+    needs: [testandbuild]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to AWS
+        run: echo 'updating ecs service ...'
+    
