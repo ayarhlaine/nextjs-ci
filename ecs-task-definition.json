@@ -1,0 +1,28 @@
+{
+    "family": "nextjs-ci",
+    "revision": 1,
+    "executionRoleArn": "arn:aws:iam::504776330223:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [{
+        "name": "nextjs-ci",
+        "image": "504776330223.dkr.ecr.ap-southeast-1.amazonaws.com/nextjs-ci:latest",
+        "portMappings": [{
+            "containerPort": 3000,
+            "hostPort": 3000,
+            "protocol": "tcp"
+        }],
+        "essential": true
+    }],
+    "compatibilities": [
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "cpu": "512",
+    "memory": "1024"
+}
